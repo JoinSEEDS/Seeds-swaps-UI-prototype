@@ -17,6 +17,7 @@
         :warnBalance="warnBalance"
         :error="error"
         :errors="errors"
+        :isFromLabel="isFromLabel"
       />
     </transition>
     <modal-select
@@ -60,6 +61,7 @@ export default class TokenField extends Vue {
   @Prop(String) error?: string;
   @Prop(Array) errors?: string[];
   @Prop({ default: false }) warnBalance?: boolean;
+  @Prop({ default: false }) isFromLabel?: boolean;
 
   modal = false;
 

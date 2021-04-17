@@ -2,6 +2,7 @@
   <b-container>
     <b-row>
       <b-col md="4">
+        from
         <token-field
           :tokenId.sync="idOne"
           :symbol="tokenOneMeta.symbol"
@@ -14,6 +15,7 @@
           :label="label"
           :errors="tokenOneMeta.errors"
           :warnBalance="warnBalance"
+          :isFromLabel="true"
         />
       </b-col>
       <b-col
@@ -24,6 +26,7 @@
         <slot></slot>
       </b-col>
       <b-col md="4">
+        to
         <token-field
           :tokenId.sync="idTwo"
           :symbol="tokenTwoMeta.symbol"
@@ -36,6 +39,7 @@
           :label="label"
           :errors="tokenTwoMeta.errors"
           :warnBalance="warnBalance"
+          :isFromLabel="false"
         />
       </b-col>
     </b-row>

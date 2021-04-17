@@ -5,7 +5,7 @@
     </div>
     <div class="ml-4 text-left">
       <h3 @click="dropdownEvent" class="mb-0 mt-0 text-white cursor">
-        {{ symbol }}
+        <span v-if="isFromLabel">from</span><span v-else>to</span> {{ symbol }}
       </h3>
       <b-form-input
         :value="amount"
@@ -30,7 +30,7 @@
         alt="Token Logo"
       />
       <div @click="click" class="font-size-lg text-white mt-3 mb-3 cursor">
-        {{ symbol }}
+        <span v-if="isFromLabel">from</span><span v-else>to</span> {{ symbol }}
       </div>
       <b-form-input
         type="number"
@@ -108,6 +108,7 @@ export default class TokenAmountInput extends Vue {
   @Prop(String) error?: string;
   @Prop(Array) errors?: string[];
   @Prop({ default: false }) warnBalance?: boolean;
+  @Prop({ default: false }) isFromLabel?: boolean;
 
   get errorsList() {
     return [
