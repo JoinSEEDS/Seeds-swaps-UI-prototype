@@ -36,9 +36,9 @@ const oldRelays = [
     ]
   },
   {
-    contract: "seeds.tbn",
+    contract: "seedsx.seeds",
     smartToken: {
-      contract: "seedsrly.tbn",
+      contract: "seedsx.seeds",
       symbol: "8,TLSEEDS"
     },
     reserves: [
