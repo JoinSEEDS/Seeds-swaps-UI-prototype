@@ -42,7 +42,7 @@
               </b-btn>
             </div>
             <span @click="navConvert" class="cursor font-size-sm text-white-50">
-              <font-awesome-icon icon="exchange-alt" fixed-width />CONVERT
+              <font-awesome-icon icon="exchange-alt" fixed-width />SWAP
             </span>
           </div>
         </b-col>

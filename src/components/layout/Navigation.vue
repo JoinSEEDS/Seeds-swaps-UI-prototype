@@ -148,7 +148,7 @@ export default class Navigation extends Vue {
   get navItems() {
     return [
       {
-        label: "Convert",
+        label: "Swap",
         destination: createDirectRoute("Tokens"),
         render: this.selectedService!.features.includes(Feature.Trade),
         disabled: false,

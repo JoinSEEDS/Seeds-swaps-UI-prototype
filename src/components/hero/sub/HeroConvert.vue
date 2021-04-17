@@ -60,13 +60,13 @@
               fixed-width
               class="mr-2"
             />
-            <span class="font-w700">CONVERT</span>
+            <span class="font-w700">SWAP</span>
           </b-btn>
         </div>
       </div>
     </two-token-hero>
     <modal-tx
-      title="Convert"
+      title="Swap"
       v-model="txModal"
       :busy="txBusy"
       @input="closeTxModal"
