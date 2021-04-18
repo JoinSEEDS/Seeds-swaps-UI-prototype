@@ -47,11 +47,17 @@
         <b-btn
           @click="loginAction"
           variant="dual"
-          size="sm"
+          size="md"
           v-b-tooltip.hover
           :title="loginTooltip"
         >
           {{ loginButtonLabel }}
+          <font-awesome-icon :icon="icon" :pulse="spin" fixed-width />
+        </b-btn>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto login">
+        <b-btn vartiant="dual" size="sm" :title="openWalletTooltip">
+          {{ openWalletLabel }}
           <font-awesome-icon :icon="icon" :pulse="spin" fixed-width />
         </b-btn>
       </b-navbar-nav>
@@ -231,6 +237,12 @@ export default class Navigation extends Vue {
   }
   get loginTooltip() {
     return "";
+  }
+  get openWalletTooltip() {
+    return "Open Light Wallet";
+  }
+  get openWalletLabel() {
+    return "Open Light Wallet";
   }
   set language(lang: string) {
     vxm.general.setLanguage(lang);

@@ -33,7 +33,7 @@
                   @click="initLogin(provider)"
                   class="mt-2 mb-5 cursor text-center align-middle Aligner-item"
                 >
-                  {{ provider.meta.name }}
+                  {{ providerName(provider) }}
                 </h3></b-col
               >
             </b-row>
@@ -120,11 +120,16 @@ export default class ModalLogin extends Vue {
     }
   }
 
+  providerName(p: WalletProvider) {
+    if (p.id == "anchor-link") return "Light Wallet";
+    else return p.meta?.name;
+  }
+
   providerLogoUrl(p: WalletProvider) {
     //    console.log("providerLogoUrl",p.id);
     switch (p.id) {
       case "anchor-link":
-        return "anchor-logo-blue.svg";
+        return "seeds.png";
       case "scatter":
         return "scatter.svg";
       //      case "Sqrl":
