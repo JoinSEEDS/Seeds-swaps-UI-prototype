@@ -56,10 +56,12 @@
         </b-btn>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto login">
-        <b-btn vartiant="dual" size="sm" :title="openWalletTooltip">
-          {{ openWalletLabel }}
-          <font-awesome-icon :icon="icon" :pulse="spin" fixed-width />
-        </b-btn>
+        <a href=":openWalletLink">
+          <b-btn vartiant="dual" size="sm" :title="openWalletTooltip" @click="openWalletAction">
+            {{ openWalletLabel }}
+            <font-awesome-icon :icon="icon" :pulse="spin" fixed-width />
+          </b-btn>
+        </a>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -231,6 +233,9 @@ export default class Navigation extends Vue {
     if (account) {
       vxm.bancor.refreshBalances();
     }
+  }
+  get openWalletLink() {
+    return window.location.href;
   }
   get language() {
     return vxm.general.language;
